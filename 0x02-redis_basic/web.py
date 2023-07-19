@@ -10,7 +10,7 @@ redis_ = redis.Redis()
 
 
 def count_requests(method: Callable) -> Callable:
-    """ Decortator for counting """
+    """ Decorator for counting """
     @wraps(method)
     def wrapper(url):  # sourcery skip: use-named-expression
         """ Wrapper for decorator """
@@ -27,9 +27,10 @@ def count_requests(method: Callable) -> Callable:
 
 @count_requests
 def get_page(url: str) -> str:
-    """ Obtain the HTML content of a  URL """
+    """ Obtain the HTML content of a URL """
     req = requests.get(url)
     return req.text
+
 
 # Example usage
 page_url = "http://slowwly.robertomurray.co.uk/delay/1000/url/http://www.example.com"
