@@ -46,6 +46,7 @@ def call_history(method: Callable) -> Callable:
 
 
 def replay(method: Callable) -> None:
+    # sourcery skip: use-fstring-for-concatenation, use-fstring-for-formatting
     """
     Replays the history of a function
     Args:
@@ -62,6 +63,7 @@ def replay(method: Callable) -> None:
     for i, o in zip(inputs, outputs):
         print("{}(*{}) -> {}".format(name, i.decode('utf-8'),
                                      o.decode('utf-8')))
+
 
 class Cache:
     '''
