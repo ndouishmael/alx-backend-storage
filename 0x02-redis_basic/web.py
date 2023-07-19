@@ -36,3 +36,9 @@ def get_page(url: str) -> str:
     and tracking the request.
     '''
     return requests.get(url).text
+
+
+# Example usage
+page_url = "http://slowwly.robertomurray.co.uk/delay/1000/url/http://www.example.com"
+page_content = get_page(page_url)
+print(page_content)
